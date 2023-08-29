@@ -12,3 +12,11 @@ def test_apply_discount():
     test_class = Item('Jho', 100.0, 10)
     test_data = test_class.apply_discount()
     assert test_data == None
+
+def test_repr():
+    item = Item("Электропельмень", 999999.99, 1)
+    assert repr(item) == "Item('Электропельмень', 999999.99, 1)"
+
+def test_str():
+    item = Item("Электропельмень", 999999.99, 1)
+    assert str(item) == "Электропельмень"
