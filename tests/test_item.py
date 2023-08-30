@@ -2,6 +2,7 @@
 
 import pytest
 from src.item import Item
+from src.phone import Phone
 
 def test_Item_calculate_total_price():
     test_class = Item('Jho', 100.0, 10)
@@ -20,3 +21,11 @@ def test_repr():
 def test_str():
     item = Item("Электропельмень", 999999.99, 1)
     assert str(item) == "Электропельмень"
+
+
+def test_add():
+    item1 = Item("Электровеник", 1000, 1)
+    phone1 = Phone("Кирпичфон", 3000, 10, 1)
+    assert item1 + phone1 == 11
+    assert phone1 + phone1 == 20
+    assert item1 + 100 == None

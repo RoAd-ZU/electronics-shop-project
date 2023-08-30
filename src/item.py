@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# from src.phone import Phone
 import csv
 
 
@@ -69,3 +70,11 @@ class Item:
 
     def __str__(self):
         return self.__name
+
+
+    def __add__(self, other):
+        if issubclass(other.__class__, self.__class__):
+            return self.quantity + other.quantity
+        else:
+            return None
+
